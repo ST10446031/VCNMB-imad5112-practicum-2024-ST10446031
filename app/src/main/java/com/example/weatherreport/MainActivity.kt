@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         var startButton = findViewById<Button>(R.id.startButton)
 
         startButton.setOnClickListener {
-                val intent = Intent(this,weather::class.java)
+                val intent = Intent(this,allWeek::class.java)
                 startActivity(intent)
         }
     }
