@@ -25,7 +25,7 @@
         android:id="@+id/enterResults"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter the waether results"
+        android:text="Enter the weather results"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.586"
