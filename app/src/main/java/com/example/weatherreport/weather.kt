@@ -1,75 +1,73 @@
 package com.example.weatherreport
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import java.util.Arrays
+import android.widget.Toast
 
-fun logArrayValues(array:Array<String>, limit: Int = 0) {
-   /* if (limit == 0) {
-        Log.v("Array Values", Arrays.toString(array))
-    } else {
-        Log.v("Array values", Arrays.toString(array.sliceArray(0..limit - 1)))
-    }
-}*/
+
 class weather : AppCompatActivity() {
-    val days = arrayOf<String>("MONDAY",
-        "TUESDAY",
-        "WEDNESDAY",
-        "THURSDAY",
-        "FRIDAY",
-        "SATURDAY",
-        "SUNDAY")
+        val days = arrayOf<Int>(0,0,0,0,0,0,0)
+        var counter = 0
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(R.layout.activity_weather)
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_weather)
-
-        var button = findViewById<Button>(R.id.button) // declaring the Button
-        var textViewWeeks = findViewById<TextView>(R.id.textViewWeeks) // declaring the Text view
-        var editText = findViewById<EditText>(R.id.editText) // Declaring the edit text
+            var enterResults = findViewById<Button>(R.id.enterResults) // declaring the Button
+            var textViewWeeks =
+                findViewById<TextView>(R.id.textViewWeeks) // declaring the Text view
+            var editText = findViewById<EditText>(R.id.editText) // Declaring the edit text
+            var exit = findViewById<Button>(R.id.exit)
+            var back = findViewById<Button>(R.id.back)
+            var average = findViewById<Button>(R.id.average)
 
 
 
-        textViewWeeks.text= days[0] // displays the days of the week in the array
-        days[0] = "Monday" // insert a value inside an array
+            enterResults.setOnClickListener {
+               var enterWeather = editText.text.toString().toInt()
 
 
-        var counter= 0
-        var daysDisplay = ""
-        daysDisplay += "${days[0]}\n"
-        daysDisplay += "${days[1]}\n"
-        daysDisplay += "${days[2]}\n"
-        daysDisplay += "${days[3]}\n"
-        daysDisplay += "${days[4]}\n"
-        daysDisplay += "${days[5]}\n"
-        daysDisplay += "${days[6]}\n"
+                if (counter < 7 ) {
+                    days[counter] = enterWeather
+                    counter++
 
-        textViewWeeks.text = daysDisplay
+                    var display = ""
+                    var count = 0
+                    while (count <10){
+                        display += "${days[count]}\n"
+                        count++
+                    }
 
-        button.setOnClickListener {
-           /* var input = editText.text.toString()
-            days[counter]= input
-            counter++*/
-            textViewWeeks.clearComposingText()
-            var weeks=7
-            var forcast= 33
+                    textViewWeeks.text = display
+                    editText.text.clear()
+                }else {
+                    Toast.makeText(this@weather,"Cannot save more weather results", Toast.LENGTH_LONG ).show()
+                }
+            }
+            average.setOnClickListener {
+                var sum : Double = 0.0
+                var counter = 0
+                while (counter < 7){
+                    sum += days[counter]
+                    counter++
+                }
+                var totalAverage : Double = 0.0
+                totalAverage = sum / 10
+                textViewWeeks.text = "$totalAverage"
+            }
 
-            if (days == days)
-                else  "The forecast of the week is"
-            textViewWeeks.text
-
-            
-
-
-
-
-
+            back.setOnClickListener {
+                val intent = Intent(this,allWeek::class.java)
+                startActivity(intent)
+            }
+            exit.setOnClickListener {
+                val intent = Intent(this,MainActivity::class.java)
+                startActivity(intent)
+            }
         }
-    }
 
 
 
