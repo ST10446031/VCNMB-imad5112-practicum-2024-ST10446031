@@ -7,6 +7,13 @@ import android.widget.EditText
 import android.widget.TextView
 
 class weather : AppCompatActivity() {
+    val days = arrayOf<String>("MONDAY",
+        "TUESDAY",
+        "WEDNESDAY",
+        "THURSDAY",
+        "FRIDAY",
+        "SATURDAY",
+        "SUNDAY")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -15,6 +22,9 @@ class weather : AppCompatActivity() {
         var button = findViewById<Button>(R.id.button)
         var textViewWeeks = findViewById<TextView>(R.id.textViewWeeks)
         var editText = findViewById<EditText>(R.id.editText)
+
+
+        }
 
 
     }
