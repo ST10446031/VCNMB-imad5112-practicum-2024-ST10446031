@@ -211,6 +211,6 @@
         android:layout_height="89dp"
         android:backgroundTint="#2196F3"
         android:text="NEXT PAGE"
-        tools:layout_editor_absoluteX="93dp"
-        tools:layout_editor_absoluteY="591dp" />
+        tools:layout_editor_absoluteX="97dp"
+        tools:layout_editor_absoluteY="562dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

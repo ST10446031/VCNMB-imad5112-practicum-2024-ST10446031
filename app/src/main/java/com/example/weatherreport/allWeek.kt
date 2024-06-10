@@ -13,7 +13,8 @@ class allWeek : AppCompatActivity() {
         var nextPage = findViewById<Button>(R.id.nextPage)
 
         nextPage.setOnClickListener {
-            val intent = Intent(this,weather::class.java)
+            val intent = Intent(this, weather::class.java)
             startActivity(intent)
+        }
     }
 }
