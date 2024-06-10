@@ -14,3 +14,6 @@ and this is the final page
 i added a button to go inside the app to see the weeks forcast and then added a button on the secon page to go to the last page and then i added four button the last pasge, one is for storing all the values of the weather results, one is for the average, the other one if for going back to look at the weeks results and the last one is to exit the app
 for the code i declared all the variables
 
+The IIE 2024.Introduction to Mobile Application and Web Development [IMAD5112 Module Manual]. The Indipendent Institute of Education:Unplished. [Accessed 10 May 2024]
+Unlishing the Power of Faith[online]Available at:https://www.savannahumc.org/unleashing-the-power-of-faith/.[Accessed 10 May 2024]
+Wallpaper Access. Sky and Wallpaper.2024[online]Available at:https://wallpaperaccess.com/sky-and-clouds. [Accessed 10 May 2024]
